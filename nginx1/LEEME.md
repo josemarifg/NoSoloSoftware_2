@@ -1,9 +1,11 @@
 #Las órdenes que he utilizado tras crear el dockerfile son las siguientes:
+
 #Crear la imagen para nuestro Nginx, estando situados en la misma carpeta de dockerfile
 
 docker build -t nginx1 .
 
-# Cargar el contenedor
+
+#Cargar el contenedor
 
 docker run --name pruebanginx -d -it -p 8080:80 nginx1 /bin/bash
 
