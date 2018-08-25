@@ -1,0 +1,23 @@
+server
+{
+  listen 80 default_server;
+  listen [::]:80;
+
+  root /var/www/html;
+  index nginx.html;
+
+  location / {
+    try_files $uri $uri/ =404;
+  }
+
+  location /docker/
+  {
+    root /docker;
+    index index.html;
+  }
+
+  location = /nginx {
+    return 301 http://localhost/docker;
+  }
+
+}
